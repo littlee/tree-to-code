@@ -5,13 +5,13 @@ generate code from a `psd.js` tree
 ## Usage
 
 ```js
-const css = require('tree-to-code/lib/css');
-const html = require('tree-to-code/lib/html');
-const jsx = require('tree-to-code/lib/jsx');
-const scss = require('tree-to-code/lib/scss');
-const styled = require('tree-to-code/lib/styled');
-const wxml = require('tree-to-code/lib/wxml');
-const wxss = require('tree-to-code/lib/wxss');
+const css = require('tree-to-code/lib/css').default;
+const html = require('tree-to-code/lib/html').default;
+const jsx = require('tree-to-code/lib/jsx').default;
+const scss = require('tree-to-code/lib/scss').default;
+const styled = require('tree-to-code/lib/styled').default;
+const wxml = require('tree-to-code/lib/wxml').default;
+const wxss = require('tree-to-code/lib/wxss').default;
 const PSD = require('psd.js');
 
 const treeExp = PSD.fromFile('./path/to/file.psd').parse().tree().export();
