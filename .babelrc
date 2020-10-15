@@ -1,0 +1,4 @@
+{
+  "ignore": ["src/treeToCode/layer.js"],
+  "presets": ["@babel/preset-env"]
+}
