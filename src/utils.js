@@ -143,13 +143,14 @@ export function treeToCompArr(tr, doc) {
             height: cHeight
           });
 
+          const isSafeComp = isSafeArea(renderComp);
           if (!isEndNode(item)) {
             walkTree(item, {
               isCont,
-              top: top,
-              left: left,
-              diffTop: cTop - (top - parent.top),
-              diffLeft: cLeft - (left - parent.left)
+              top: isSafeComp ? (doc.height - SAFE_HEIGHT) / 2 : top,
+              left: isSafeComp ? 0 : left,
+              diffTop: isSafeComp ? 0 : cTop - (top - parent.top),
+              diffLeft: isSafeComp ? 0 : cLeft - (left - parent.left)
             });
           }
         });

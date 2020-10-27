@@ -137,10 +137,11 @@ export default function renderJSX(
   import React from 'react';
   ${importTypeMap[options.reactType](tr, options)}
 
-  export default props => {
+  const PageName = props => {
     return (
       ${returnTypeMap[options.reactType](tr, options)}
     )
   };
+  export default PageName;
   `;
 }
