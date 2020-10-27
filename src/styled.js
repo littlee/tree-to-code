@@ -23,7 +23,7 @@ export default function renderStyled(
   }
 ) {
   const compArr = treeToCompArr(tr, options.doc);
-  const hasSafeArea = compArr.find(item => isSafeArea(item));
+  const hasSafeArea = compArr.find((item) => isSafeArea(item));
   return (
     `
     import styled from 'styled-components/macro';
@@ -32,10 +32,10 @@ export default function renderStyled(
   `.trim() +
     '\n\n' +
     compArr
-      .filter(item => {
+      .filter((item) => {
         return !isSafeArea(item);
       })
-      .map(item => {
+      .map((item) => {
         return `
     export const ${getCompJsName(item)} = styled.div\`
       position: absolute;
@@ -87,7 +87,7 @@ export default function renderStyled(
           export const SafeArea = styled.div\`
             position: relative;
             width: 100%;
-            height: vw(${SAFE_HEIGHT});
+            height: \${vw(${SAFE_HEIGHT})};
 
             @media (min-aspect-ratio: ${options.doc.width} / ${SAFE_HEIGHT}) {
               height: 100%;
